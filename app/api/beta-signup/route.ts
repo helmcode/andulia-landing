@@ -12,7 +12,7 @@ async function validateRecaptcha(token: string) {
 
     const data = await response.json()
     return data.success
-  } catch (error) {
+  } catch {
     return false
   }
 }
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
       success: true,
       message: "Thank you for joining our beta! We'll be in touch soon.",
     })
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       {
         success: false,
